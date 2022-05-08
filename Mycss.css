@@ -1,0 +1,214 @@
+/* Discourse Graph 节点配置 */
+span[data-link-title*='[[QUE]]']:before {
+  content: '🔎 ';
+}
+span[data-link-title*='QUE'] > span {
+  font-weight: 500;
+  color: #99890E !important;
+}
+span[data-link-title^='QUE'] {
+  border-radius: 5px;
+  border-color: var(--ls-link-ref-text-color);
+  border-style: solid;
+  border-width: thin;
+}
+span[data-link-title*='[[CLM]]']:before {
+  content: '🌲 ';
+}
+span[data-link-title*='CLM'] > span {
+  font-weight: 500;
+  color: #7DA13E !important;
+}
+span[data-link-title^='CLM'] {
+  border-radius: 5px;
+  border-color: var(--ls-link-ref-text-color);
+  border-style: solid;
+  border-width: thin;
+}
+span[data-link-title*='[[EVD]]']:before {
+  content: '🌱 ';
+}
+span[data-link-title*='EVD'] > span {
+  font-weight: 500;
+  color: #DB134A !important;
+}
+span[data-link-title^='EVD'] {
+  border-radius: 5px;
+  border-color: var(--ls-link-ref-text-color);
+  border-style: solid;
+  border-width: thin;
+}
+span[data-link-title*='[[SYN]]']:before {
+  content: '🎇 ';
+}
+span[data-link-title*='SYN'] > span {
+  font-weight: 500;
+  color: #9C27B0 !important;
+}
+span[data-link-title^='SYN'] {
+  border-radius: 5px;
+  border-color: var(--ls-link-ref-text-color);
+  border-style: solid;
+  border-width: thin;
+}
+span[data-link-title*='[[ZK]]']:before {
+  content: '🗃 ';
+}
+span[data-link-title*='ZK'] > span {
+  font-weight: 500;
+  color: #DFAC12 !important;
+}
+span[data-link-title^='ZK'] {
+  border-radius: 5px;
+  border-color: var(--ls-link-ref-text-color);
+  border-style: solid;
+  border-width: thin;
+}
+span[data-link-title*='[[ARCH]]']:before {
+  content: '🗃 ';
+}
+span[data-link-title*='ARCH'] > span {
+  font-weight: 500;
+  color: #9E9E9E !important;
+}
+span[data-link-title^='ARCH'] {
+  border-radius: 5px;
+  border-color: var(--ls-link-ref-text-color);
+  border-style: solid;
+  border-width: thin;
+}
+span[data-link-title*='[[SOU]]']:before {
+  content: '🧩 ';
+}
+span[data-link-title*='SOU'] > span {
+  font-weight: 500;
+  color: #BED00B !important;
+}
+span[data-link-title^='SOU'] {
+  border-radius: 5px;
+  border-color: var(--ls-link-ref-text-color);
+  border-style: solid;
+  border-width: thin;
+}
+span[data-link-title*='[[ET]]']:before {
+  content: '🪐 ';
+}
+span[data-link-title*='ET'] > span {
+  font-weight: 500;
+  color: #0feba6 !important;
+}
+span[data-link-title^='ET'] {
+  border-radius: 5px;
+  border-color: var(--ls-link-ref-text-color);
+  border-style: solid;
+  border-width: thin;
+}
+span[data-link-title*='[[RL]]']:before {
+  content: '💫 ';
+}
+span[data-link-title*='RL'] > span {
+  font-weight: 500;
+  color: #00BCD4 !important;
+}
+span[data-link-title^='RL'] {
+  border-radius: 5px;
+  border-color: var(--ls-link-ref-text-color);
+  border-style: solid;
+  border-width: thin;
+}
+/* Discourse Graph 节点关系配置 */
+span[data-link-title='SupportedBy']:before {
+  content: '✅ ';
+}
+span[data-link-title='OpposedBy']:before {
+  content: '⛔ ';
+}
+/* 部分标签样式 */
+/* 1.标签基本样式 */
+span[data-tag] {
+  color: #EAF0F2 !important;
+  background: #795548;
+  position: relative;
+}
+.rm-page-ref--tag,
+span[data-tag='tags'] {
+  padding: 1px 7px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+/* 2.指定标签样式 */
+span[data-tag^='PW'] {
+  background: #FFC107;
+}
+span[data-tag^='PW']:before,
+span[data-link-title^='PW']:before {
+  content: '💠';
+}
+span[data-tag^='Fleeting'] {
+  background: #9C27B0;
+}
+span[data-tag^='Fleeting']:before,
+span[data-link-title^='Fleeting']:before {
+  content: '💡';
+}
+span[data-tag^='Evergreen'] {
+  background: #8BC34A;
+}
+span[data-tag^='Evergreen']:before,
+span[data-link-title^='Evergreen']:before {
+  content: '🎄';
+}
+span[data-tag^='Deprecation'] {
+  background: #F91B0B;
+}
+span[data-tag^='Deprecation']:before,
+span[data-link-title^='Deprecation']:before {
+  content: '🚨';
+}
+span[data-tag^='QUOTES'] {
+  background: #FF9801;
+}
+span[data-tag^='QUOTES']:before,
+span[data-link-title^='QUOTES']:before {
+  content: '🍊';
+}
+span[data-tag^='Bug'] {
+  background: #EA0956;
+}
+span[data-tag^='Bug']:before,
+span[data-link-title^='Bug']:before {
+  content: '🐛';
+}
+span[data-tag^='Feeling'] {
+  background: #9E9E9E;
+}
+span[data-tag^='Feeling']:before,
+span[data-link-title^='Feeling']:before {
+  content: '🚦';
+}
+/* 引用数图标修饰 */
+.rm-block__ref-count-footnote {
+  display: -webkit-inline-flex;
+  justify-content: center;
+  /* margin-left: 0.3rem; */
+  padding: 0 0;
+  width: 1rem;
+  height: 1rem;
+  left: 1rem;
+  top: 0.3rem;
+  border-radius: 50%;
+  line-height: 1rem;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  background-color: grey;
+  color: white;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 255, 0.2);
+  animation: sleep 0.5s infinite alternate;
+}
+@keyframes sleep {
+  to {
+    width: 1.1rem;
+    height: 1.1rem;
+    font-size: 0.9rem;
+  }
+}

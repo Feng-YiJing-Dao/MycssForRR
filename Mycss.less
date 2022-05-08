@@ -1,0 +1,146 @@
+// out: ./Mycss.css
+
+@fontW: 500;
+@border-radius: 5px;
+@border-col: var(--ls-link-ref-text-color);
+@border-style: solid;
+@border-width: thin;
+
+@QUE-color: #99890E;
+@CLM-color: #7DA13E;
+@EVD-color: #DB134A;
+@SYN-color:#9C27B0;
+@ZK-color:#DFAC12;
+@ARCH-color:#9E9E9E;
+@SOU-color:#BED00B;
+@ET-color:#0feba6;
+@RL-color:#00BCD4;
+@IR-color:#4CAF50;
+
+/* Discourse Graph 节点配置 */
+@name:'[[QUE]]','[[CLM]]','[[EVD]]','[[SYN]]','[[ZK]]','[[ARCH]]','[[SOU]]','[[ET]]','[[RL]]','[[IR]]';
+@name2:'QUE','CLM','EVD','SYN','ZK','ARCH','SOU','ET','RL','IR';
+@imgs: '🔎 ', '🌲 ','🌱 ','🎇 ', '🗃 ','🗃 ','🧩 ','🪐 ','💫 ','🟢 ';
+@colors:@QUE-color,@CLM-color,@EVD-color,@SYN-color,@ZK-color,@ARCH-color,@SOU-color,@ET-color,@RL-color,@IR-color;
+@len: length(@name);
+.DGNode(@index) when(@index<@len){
+    @t: extract(@name,@index);
+    span[data-link-title*= @{t}]:before {
+        content: extract(@imgs,@index);
+    };
+
+    @t2: extract(@name2,@index);
+    span[data-link-title*=@{t2}] > span {
+        font-weight: @fontW;
+        color: extract(@colors,@index) !important;
+    };
+
+    span[data-link-title^=@{t2}]{
+        border-radius: @border-radius;
+        border-color: @border-col;
+        border-style: @border-style;
+        border-width: @border-width;
+    };
+
+    .DGNode(@index+1)
+};
+.DGNode(1);
+
+/* Discourse Graph 节点关系配置 */
+@nodeRL:'SupportedBy','OpposedBy';
+@nodeRLImg:'✅ ','⛔ ';
+.DGNodeRL(@index) when (@index<=length(@nodeRL)){
+    @t: extract(@nodeRL,@index);
+    span[data-link-title=@{t}]:before {
+        content: extract(@nodeRLImg,@index);
+    }
+    .DGNodeRL(@index+1)
+};
+
+.DGNodeRL(1);
+
+/* 部分标签样式 */
+/* 1.标签基本样式 */
+span[data-tag]{
+    color: #EAF0F2 !important;
+    background: #795548;
+    position: relative;
+}
+  
+.rm-page-ref--tag, span[data-tag='tags'] {
+    padding:  1px 7px;
+    border-radius: 			20px;
+    text-decoration: 		none;
+}
+
+@PW-color: #FFC107;
+@Fleeting-color: #9C27B0;
+@Evergreen-color: #8BC34A;
+@Deprecation-color: #F91B0B;
+@QUOTES-color: #FF9801;
+@Bug-color: #EA0956;
+@Feeling-color: #9E9E9E;
+
+@TagName:'PW','Fleeting','Evergreen','Deprecation','QUOTES','Bug','Feeling';
+@TagImg:'💠', '💡',       '🎄',       '🚨',         '🍊',     '🐛', '🚦';
+@TagColor:@PW-color,@Fleeting-color,@Evergreen-color,@Deprecation-color,@QUOTES-color,@Bug-color,@Feeling-color;
+
+/* 2.指定标签样式 */
+.Tag(@index) when (@index<=length(@TagName)){
+    @t: extract(@TagName,@index);
+    span[data-tag^=@{t}]{
+        background: extract(@TagColor,@index);
+    }
+    span[data-tag^=@{t}]:before
+    ,span[data-link-title^=@{t}]:before{
+    content: extract(@TagImg,@index);
+    }
+    .Tag(@index+1)
+};
+
+.Tag(1);
+
+/* 引用数图标修饰 */
+.rm-block__ref-count-footnote {
+    display: -webkit-inline-flex;
+    justify-content: center;
+    /* margin-left: 0.3rem; */
+    padding: 0 0;
+    width: 1rem;
+    height: 1rem;
+    left: 1rem;
+    top: 0.3rem;
+    border-radius: 50%;
+    line-height: 1rem;
+    overflow: hidden;
+    transform: translate(-50%,-50%);
+    background-color: grey;
+    color:white;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 255, .2);
+    animation: sleep .5s infinite alternate
+}
+
+@keyframes sleep {
+    to {
+        width: 1.1rem;
+        height: 1.1rem;
+        font-size: 0.9rem;
+    }
+}
+
+// /* Discourse Graph 基本边框配置 */
+// span[data-link-title^="QUE"],
+// span[data-link-title^="CLM"],
+// span[data-link-title^="EVD"],
+// span[data-link-title^="SYN"],
+// span[data-link-title^="ZK"],
+// span[data-link-title^="ARCH"],
+// span[data-link-title^="SOU"],
+// span[data-link-title^="ET"],
+// span[data-link-title^="RL"],
+// span[data-link-title^="IR"] {
+//     border-radius: @border-radius;
+//     border-color: @border-col;
+//     border-style: @border-style;
+//     border-width: @border-width;
+// }
